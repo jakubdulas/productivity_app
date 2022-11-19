@@ -43,7 +43,7 @@ class TaskSerializer(serializers.ModelSerializer):
             'username': instance.user.username,
             'name': instance.name,
             'deadline': instance.deadline,
-            'category': instance.category.values(),
+            'categories': instance.category.values(),
             'completed': instance.completed,
             "id": instance.id
         }
@@ -57,7 +57,7 @@ class EventSerializer(serializers.ModelSerializer):
         return {
             'name': instance.name,
             'date': instance.date,
-            'category': instance.category.values(),
+            'categories': instance.category.values(),
             'id': instance.id
         }
 

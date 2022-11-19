@@ -28,7 +28,9 @@ with open('secret.json') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://localhost:8080', 'http://localhost:8000', 'localhost']
+
+CORS_ALLOWED_ORIGINS = ['http://localhost:8080', 'http://localhost:8000']
 
 
 # Application definition
@@ -140,7 +142,7 @@ REST_FRAMEWORK = {
 
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=15),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=31),
 
     # ROTATE_REFRESH_TOKENS: True - po wygasnieciu refresh tokenu zwroci nowy dzieki czemu nie trzeba bedzie sie znowu logowac, False jezeli po wygasnieciu tokenu trzeba bedzie sie znowu zalogowac
